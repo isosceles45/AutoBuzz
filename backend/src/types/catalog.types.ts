@@ -90,6 +90,9 @@ export interface FyndProduct {
 }
 
 export interface FyndProductDetail extends FyndProduct {
+    department: any;
+    category_map: any;
+    categories: any;
     return_config?: {
         returnable: boolean;
         time: number;

@@ -7,6 +7,7 @@ import { rateLimit } from 'express-rate-limit';
 import authRoutes from './routes/auth.js';
 import catalogRoutes from './routes/catalog.js';
 import preferencesRoutes from './routes/preference.js';
+import similarityRoutes from './routes/similarity.js';
 
 dotenv.config();
 
@@ -41,6 +42,7 @@ app.get('/health', (req, res) => {
 app.use('/api/catalog', catalogRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/preferences', preferencesRoutes);
+app.use('/api/similarity', similarityRoutes);
 
 // Error handling
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
