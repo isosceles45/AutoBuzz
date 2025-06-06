@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Heart, X, Loader2, ArrowLeft, ArrowRight } from 'lucide-react';
 import { catalogService } from '@/lib/catalogService';
-import {EnhancedProductPreferences, ProductInteraction} from "@/app/dashboard/page";
+import {EnhancedProductPreferences, ProductInteraction} from "@/lib/preferenceService";
 
 interface FyndProduct {
     uid: number;

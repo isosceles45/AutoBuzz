@@ -65,8 +65,7 @@ export interface UserPreferences {
         currency: string;
     };
     selectedBrands: string[];
-    enhancedData?: EnhancedProductPreferences;
-}
+    enhancedData?: EnhancedProductPreferences | null;}
 
 export interface PreferencesResponse {
     id: string;

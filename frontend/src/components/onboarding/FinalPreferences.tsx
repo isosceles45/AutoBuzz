@@ -213,12 +213,13 @@ export default function FinalPreferences({ previousPreferences, onComplete }: Fi
                             <div className="px-2">
                                 <Slider
                                     value={priceRange}
-                                    onValueChange={setPriceRange}
-                                    max={getPriceFilter()?.values[0]?.max || 10000}
-                                    min={getPriceFilter()?.values[0]?.min || 0}
+                                    onValueChange={(val) => setPriceRange([val[0], val[1]])}
+                                    max={getPriceFilter()?.values[0]?.max ?? 10000}
+                                    min={getPriceFilter()?.values[0]?.min ?? 0}
                                     step={50}
                                     className="w-full"
                                 />
+
                             </div>
                             <div className="flex justify-between text-sm">
                                 <span className="font-semibold text-blue-600">
@@ -244,7 +245,7 @@ export default function FinalPreferences({ previousPreferences, onComplete }: Fi
                             </p>
                         </CardHeader>
                         <CardContent>
-                            {getSizeFilter()?.values?.length > 0 ? (
+                            {getSizeFilter()?.values && getSizeFilter()!.values.length > 0 ? (
                                 <div className="flex flex-wrap gap-3">
                                     {getSizeFilter()?.values.map((size) => {
                                         const isSelected = selectedSizes.includes(size.value || size.display);
